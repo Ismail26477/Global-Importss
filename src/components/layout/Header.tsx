@@ -35,12 +35,12 @@ const Header = () => {
       {/* Top bar */}
       <div className="bg-header text-header-foreground border-b border-header/20">
         <div className="container mx-auto px-3 sm:px-4">
-          <div className="flex items-center justify-between py-4 sm:py-5 text-xs sm:text-sm gap-2 sm:gap-4">
+          <div className="flex items-center justify-between py-2.5 text-xs sm:text-sm gap-2 sm:gap-4">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="ghost"
-                  className="text-header-foreground hover:bg-header/80 h-auto p-2 sm:p-3 flex items-center gap-1 sm:gap-2 font-semibold"
+                  className="text-header-foreground hover:bg-header/80 h-auto p-1 sm:p-2 flex items-center gap-1 sm:gap-2 font-semibold"
                 >
                   <MapPin className="h-3.5 w-3.5 sm:h-4 sm:w-4 flex-shrink-0" />
                   <span className="hidden xs:inline text-xs sm:text-sm">Deliver to</span>
@@ -76,7 +76,7 @@ const Header = () => {
       </div>
 
       {/* Main header */}
-      <div className="bg-header text-header-foreground border-b border-header/20">
+      <div className="bg-header text-header-foreground border-b border-header/20 pt-3 md:pt-0">
         <div className="container mx-auto px-3 sm:px-4">
           <div className="flex items-center gap-2 sm:gap-4 py-3 sm:py-4">
             {/* Mobile menu button */}
