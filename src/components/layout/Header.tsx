@@ -3,6 +3,7 @@
 import type React from "react"
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { Search, ShoppingCart, Heart, User, Menu, X, ChevronDown, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -20,13 +21,14 @@ const Header = () => {
   const { totalItems } = useCart()
   const { items: wishlistItems } = useWishlist()
   const { user, signOut } = useAuth()
+  const navigate = useNavigate()
 
   const indianCities = ["Delhi", "Mumbai", "Bangalore", "Hyderabad", "Kolkata", "Chennai", "Pune", "Ahmedabad"]
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
     if (searchQuery.trim()) {
-      window.location.href = `/search?q=${encodeURIComponent(searchQuery)}`
+      navigate(`/search?q=${encodeURIComponent(searchQuery)}`)
     }
   }
 
