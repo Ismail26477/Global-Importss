@@ -1,4 +1,5 @@
 import type { Product } from "@/data/products"
+import { products } from "@/data/products"
 import ProductCard from "./ProductCard"
 
 interface RelatedProductsProps {
@@ -8,9 +9,6 @@ interface RelatedProductsProps {
 }
 
 const RelatedProducts = ({ currentProductId, category, limit = 4 }: RelatedProductsProps) => {
-  // Import products data
-  const { products } = require("@/data/products")
-
   const relatedProducts = products
     .filter((p: Product) => p.category === category && p.id !== currentProductId)
     .slice(0, limit)
