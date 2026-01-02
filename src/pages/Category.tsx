@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useMemo } from "react"
-import { useSearchParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
 import ProductCard from "@/components/products/ProductCard"
@@ -18,8 +18,8 @@ import { Filter, X } from "lucide-react"
 type SortOption = "relevance" | "price-low" | "price-high" | "newest" | "rating"
 
 const Category = () => {
-  const [searchParams] = useSearchParams()
-  const categoryId = searchParams.get("id") || "home"
+  const { id } = useParams<{ id: string }>()
+  const categoryId = id || "home"
 
   // Filter states
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 2000])
