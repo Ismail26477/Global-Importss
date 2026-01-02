@@ -31,7 +31,7 @@ const Header = () => {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full shadow-md">
+    <header className="w-full shadow-md z-50">
       {/* Top bar */}
       <div className="bg-header text-header-foreground border-b border-header/20">
         <div className="container mx-auto px-3 sm:px-4">
