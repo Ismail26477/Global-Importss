@@ -31,7 +31,7 @@ const Header = () => {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full">
+    <header className="sticky top-0 z-50 w-full shadow-md">
       {/* Top bar */}
       <div className="bg-header text-header-foreground border-b border-header/20">
         <div className="container mx-auto px-3 sm:px-4">
@@ -189,7 +189,7 @@ const Header = () => {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-header-foreground hover:bg-header/80 relative h-9 w-9 sm:h-10 sm:w-10"
+                  className="text-header-foreground hover:bg-header/80 relative flex items-center gap-1 h-9 sm:h-10 px-2 sm:px-3"
                 >
                   <Heart className="h-5 w-5 sm:h-6 sm:w-6" />
                   {wishlistItems.length > 0 && (
