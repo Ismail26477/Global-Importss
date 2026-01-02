@@ -23,7 +23,11 @@ import AddReviewForm from "@/components/products/AddReviewForm"
 
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>()
+  console.log("[v0] ProductDetail - ID from params:", id)
+
   const product = getProductById(id || "")
+  console.log("[v0] ProductDetail - Product found:", product?.name)
+
   const { addToCart } = useCart()
   const { addToWishlist, isInWishlist } = useWishlist()
   const { addToRecentlyViewed } = useRecentlyViewed()
@@ -44,7 +48,7 @@ const ProductDetail = () => {
         <main className="flex-1 flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-3xl font-bold mb-4">Product Not Found</h1>
-            <p className="text-muted-foreground mb-6">The product you're looking for doesn't exist.</p>
+            <p className="text-muted-foreground mb-6">The product you're looking for doesn't exist. Product ID: {id}</p>
             <Link to="/">
               <Button>Back to Home</Button>
             </Link>
